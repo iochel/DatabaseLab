@@ -1,0 +1,44 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a href="../index.php">Back</a>
+    <h3>ADD User</h3>
+    <p>
+        <?php
+        if (isset($_GET['save-success'])) {
+            echo "Successfully saved";
+        }
+        ?>
+    </p>
+    <div>
+        <a href="user/create.php">Add User</a>
+    </div>
+    <!-- Add User Form -->
+    <div>
+    <form action="php/user/add.php" method="POST">
+        <div>
+            <label for="first_name">First Name:</label><br>
+            <input type="text" name="first_name" placeholder="First Name" required>
+        </div>
+        <div>
+            <label for="last_name">Last Name:</label><br>
+            <input type="text" name="last_name" placeholder="Last Name" required>
+        </div>
+        <div>
+            <label>Gender:</label><br>
+            <input type="radio" name="gender" value="male" required> Male
+            <input type="radio" name="gender" value="female" required> Female
+            <input type="radio" name="gender" value="other" required> Other
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</body>
+</html>
